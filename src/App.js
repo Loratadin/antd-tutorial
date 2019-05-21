@@ -1,8 +1,9 @@
 import React from 'react';
+import "./App.less";
 
 function App() {
   return (
-    <div>My App</div>
+    <div className={"app-container"}>My App</div>
   );
 }
 
