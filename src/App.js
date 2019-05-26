@@ -1,8 +1,11 @@
 import React from 'react';
+import PagesContainer from './components/PagesContainer';
 
 function App() {
   return (
-    <div className={"app-container"}>My App is here</div>
+    <div className={"app-container"}>
+      <PagesContainer/>
+    </div>
   );
 }
 
