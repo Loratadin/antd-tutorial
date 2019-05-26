@@ -6,17 +6,17 @@ export default class PagesContainer extends PureComponent {
     render() {
         return (
             <div className={"pages-container"}>
-                <Tabs defaultActiveKey="home" >
-                    <TabPane tab="Tab 1" key="home">
+                <Tabs className={"pages-container__tabs"} defaultActiveKey="home" >
+                    <TabPane className={"pages-container__tab"} tab="Home" key="home">
                    Home
                     </TabPane>
-                    <TabPane tab="Tab 2" key="cars">
+                    <TabPane className={"pages-container__tab"} tab="Cars" key="cars">
                     Cars
                     </TabPane>
-                    <TabPane tab="Tab 3" key="company">
+                    <TabPane className={"pages-container__tab"} tab="Company" key="company">
                     Company
                     </TabPane>
-                    <TabPane tab="Tab 3" key="order">
+                    <TabPane className={"pages-container__tab"} tab="Order" key="order">
                     Order
                     </TabPane>
                 </Tabs>
