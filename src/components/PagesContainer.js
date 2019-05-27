@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Tabs } from 'antd';
+import Home from '../components/Home';
 
 const TabPane = Tabs.TabPane;
 export default class PagesContainer extends PureComponent {
@@ -8,7 +9,7 @@ export default class PagesContainer extends PureComponent {
             <div className={"pages-container"}>
                 <Tabs className={"pages-container__tabs"} defaultActiveKey="home" >
                     <TabPane className={"pages-container__tab"} tab="Home" key="home">
-                   Home
+                    <Home/>
                     </TabPane>
                     <TabPane className={"pages-container__tab"} tab="Cars" key="cars">
                     Cars
