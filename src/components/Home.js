@@ -4,7 +4,9 @@ export default class Home extends PureComponent {
     render() {
         return (
             <div className={"home-container"}>
-Homyyy
+                <div className={"featured-image-wrap"}>
+                    <img src="./assets/hero.jpg" className={"featured-image"} alt="car"/>
+                </div>
             </div>
         )
     }
