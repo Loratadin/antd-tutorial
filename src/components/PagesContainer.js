@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Tabs } from 'antd';
 import Home from '../components/Home';
+import Company from '../components/Company';
 
 const TabPane = Tabs.TabPane;
 export default class PagesContainer extends PureComponent {
@@ -15,7 +16,7 @@ export default class PagesContainer extends PureComponent {
                     Cars
                     </TabPane>
                     <TabPane className={"pages-container__tab"} tab="Company" key="company">
-                    Company
+                    <Company/>
                     </TabPane>
                     <TabPane className={"pages-container__tab"} tab="Order" key="order">
                     Order
