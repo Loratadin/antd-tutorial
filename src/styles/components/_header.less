@@ -23,6 +23,7 @@
 .header__logo-wrap {
     width: 50px;
     grid-area: logo;
+    margin: 0 auto;
 }
 .header__logo {
     width: 100%;
@@ -45,6 +46,23 @@
     grid-area: phone;
 }
 
+@media (min-width: 700px) {
+    .header__container {
+        grid-template-columns: 20% 1fr 1fr 1fr 20%;
+        grid-template-areas: 
+        ". logo . . ."
+        ". email location phone .";
+        padding: 20px 5% 0 5%;
+    }
+    .header__logo-wrap {
+        margin: 0;
+    }
+    .header__email,
+    .header__location,
+    .header__phone {
+        justify-content: flex-start;
+    }
+}
 @media (min-width: 1024px) {
     .header__container {
         grid-template-columns: 100px  1fr 1fr 1fr;
@@ -55,5 +73,11 @@
     }
     .header__logo-wrap {
         width: 80px;
+        margin: 0 auto;
+    }
+    .header__email,
+    .header__location,
+    .header__phone {
+        justify-content: flex-end;
     }
 }
