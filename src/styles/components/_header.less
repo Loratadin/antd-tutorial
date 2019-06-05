@@ -1,0 +1,59 @@
+.header__container {
+    display: grid;
+    grid-template-columns: 1fr  1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "logo . ."
+    "email location phone";
+    position: fixed;
+    width: 100%;
+    height: 12vh;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    padding: 10px 5%;
+    color: @light-gray;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 10px;
+    .anticon {
+        color: @primary;
+        margin-right: 5px;
+    }
+}
+.header__logo-wrap {
+    width: 50px;
+    grid-area: logo;
+}
+.header__logo {
+    width: 100%;
+    display: block;
+}
+.header__email,
+.header__location,
+.header__phone {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header__email {
+    grid-area: email;
+}
+.header__location {
+    grid-area: location;
+}
+.header__phone {
+    grid-area: phone;
+}
+
+@media (min-width: 700px) {
+    .header__container {
+        grid-template-columns: 100px  1fr 1fr 1fr;
+        grid-template-areas: "logo email location phone";
+        align-items: center;
+        padding: 30px 20% 0 20%;
+        font-size: 13px;
+    }
+    .header__logo-wrap {
+        width: 80px;
+    }
+}
