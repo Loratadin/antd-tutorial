@@ -1,5 +1,13 @@
 .app-container {
-    min-height: 100vh;
+    height: 100vh;
     background: @background1;
-   padding: 5% 10%;
+    padding: 0 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 700px) {
+    .app-container {
+        padding: 0 10vw;
+    }
 }
