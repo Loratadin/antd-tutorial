@@ -6,7 +6,7 @@ export default class Header extends PureComponent {
         return (
             <div className="header__container">
                 <div className="header__logo-wrap">
-                    <img src="./assets/stk.png" className="header__logo" alt="logo"/>
+                    <img src="./assets/wsa.svg" className="header__logo" alt="logo"/>
                 </div>
                 <div className="header__email">
                     <Icon type="mail" theme="filled" />
