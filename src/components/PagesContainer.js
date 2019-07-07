@@ -10,17 +10,17 @@ export default class PagesContainer extends PureComponent {
         return (
             <div className={"pages-container"}>
                 <Header/>
-                <Tabs className={"pages-container__tabs"} defaultActiveKey="home" >
+                <Tabs className="pages-container__tabs" defaultActiveKey="home" >
                     <TabPane className={"pages-container__tab"} tab="Home" key="home">
                         <Home/>
                     </TabPane>
-                    <TabPane className={"pages-container__tab"} tab="Cars" key="cars">
+                    <TabPane className="pages-container__tab" tab="Cars" key="cars">
                     Cars
                     </TabPane>
-                    <TabPane className={"pages-container__tab"} tab="Company" key="company">
+                    <TabPane className="pages-container__tab" tab="Company" key="company">
                         <Company/>
                     </TabPane>
-                    <TabPane className={"pages-container__tab"} tab="Order" key="order">
+                    <TabPane className="pages-container__tab" tab="Order" key="order">
                     Order
                     </TabPane>
                 </Tabs>
