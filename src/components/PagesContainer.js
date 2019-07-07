@@ -8,10 +8,10 @@ const TabPane = Tabs.TabPane;
 export default class PagesContainer extends PureComponent {
     render() {
         return (
-            <div className={"pages-container"}>
+            <div className="pages-container">
                 <Header/>
                 <Tabs className="pages-container__tabs" defaultActiveKey="home" >
-                    <TabPane className={"pages-container__tab"} tab="Home" key="home">
+                    <TabPane className="pages-container__tab" tab="Home" key="home">
                         <Home/>
                     </TabPane>
                     <TabPane className="pages-container__tab" tab="Cars" key="cars">
