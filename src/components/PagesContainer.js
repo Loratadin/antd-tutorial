@@ -6,11 +6,18 @@ import Company from '../components/Company';
 
 const { TabPane } = Tabs;
 export default class PagesContainer extends PureComponent {
+    state = {
+        activeKey: "home",
+    }
+
+    handleTabChange = key => this.setState({activeKey: key})
+
     render() {
+        const { activeKey } = this.state;
         return (
             <div className="pages-container">
                 <Header />
-                <Tabs defaultActiveKey="home" >
+                <Tabs defaultActiveKey="home" activeKey={activeKey} onChange={this.handleTabChange}>
                     <TabPane tab="Home" key="home">
                         <Home/>
                     </TabPane>

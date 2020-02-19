@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Search from './Search';
 
 export default class Home extends PureComponent {
     render() {
@@ -11,6 +12,10 @@ export default class Home extends PureComponent {
                     <div className="home__featured-content">Premium</div>
                     <div className="home__featured-content">Car Rental</div>
                     <div className="home__featured-content">In Dallas</div>
+                </div>
+                <div className="home__search-wrap">
+                    <div className="home__search-title">Find your next match</div>
+                    <Search/>
                 </div>
             </div>
         )
