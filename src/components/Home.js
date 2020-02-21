@@ -3,6 +3,7 @@ import Search from './Search';
 
 export default class Home extends PureComponent {
     render() {
+        const { changeTab } = this.props;
         return (
             <div className="home__container">
                 <div className="home__featured-image-wrap">
@@ -15,7 +16,7 @@ export default class Home extends PureComponent {
                 </div>
                 <div className="home__search-wrap">
                     <div className="home__search-title">Find your next match</div>
-                    <Search/>
+                    <Search changeTab={changeTab} />
                 </div>
             </div>
         )

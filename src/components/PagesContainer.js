@@ -19,7 +19,7 @@ export default class PagesContainer extends PureComponent {
                 <Header />
                 <Tabs defaultActiveKey="home" activeKey={activeKey} onChange={this.handleTabChange}>
                     <TabPane tab="Home" key="home">
-                        <Home/>
+                        <Home changeTab={this.handleTabChange}/>
                     </TabPane>
                     <TabPane tab="Cars" key="cars">
                         Cars
