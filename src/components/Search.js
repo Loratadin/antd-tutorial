@@ -1,10 +1,18 @@
 import React, { PureComponent } from 'react';
 import { Select, Button } from "antd";
+import { makesAndModels } from "../dummyData";
+
+const { Option } = Select;
 export default class Search extends PureComponent {
     state = {
         byMake: true,
         byStyle: false,
+        selectedMake: undefined,
+        selectedModel: undefined,
     }
+
+    updateSelectedOption = (value, key) => this.setState({ [key]: value });
+
     switchTab = (key1, key2) => {
         if (this.state[key1] === false) {
             this.setState({[key1]: true, [key2]: false})
@@ -19,7 +27,8 @@ export default class Search extends PureComponent {
     }
 
     render() {
-        const { byMake, byStyle } = this.state;
+        const { byMake, byStyle, selectedMake, selectedModel } = this.state;
+        const models = selectedMake && makesAndModels.find(record => record.make === selectedMake).models;
         return (
             <React.Fragment>
                 <div className="search__tabs">
@@ -37,7 +46,47 @@ export default class Search extends PureComponent {
                     </div>
                 </div>
                 <div className="search__body">
-                    <Select className="search__selector"/>
+                    {byMake ? (
+                        <>
+                            <Select
+                                className="search__selector"
+                                placeholder="Select a Make"
+                                value={selectedMake}
+                                onChange={(value => this.updateSelectedOption(value, "selectedMake"))}
+                            >
+                                {makesAndModels.map(item => (
+                                    <Option key={item.make} value={item.make}>
+                                        {item.make}
+                                    </Option>
+                                ))}
+                            </Select>
+                            <Select
+                                className="search__selector"
+                                placeholder="Select a Model"
+                                value={selectedModel}
+                                onChange={(value => this.updateSelectedOption(value, "selectedModel"))}
+                            >
+                                {selectedMake && models.map(model => (
+                                    <Option key={model} value={model}>
+                                        {model}
+                                    </Option>
+                                ))}
+                            </Select>
+                        </>
+                    ) : (
+                        <Select
+                            className="search__selector"
+                            placeholder="Select a Make"
+                            value={selectedMake}
+                            onChange={(value => this.updateSelectedOption(value, "selectedMake"))}
+                        >
+                            {makesAndModels.map(item => (
+                                <Option key={item.make} value={item.make}>
+                                    {item.make}
+                                </Option>
+                            ))}
+                        </Select>
+                    )}
                     <Button type="primary" onClick={this.onSearchClick}>Search</Button>
                     <Button className="search__see-all-button" onClick={this.onSeeAllClick}>See All Cars</Button>
                 </div>
