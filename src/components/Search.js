@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Select, Button } from "antd";
-import { makesAndModels } from "../dummyData";
+import { makesAndModels, bodyStyles } from "../dummyData";
 
 const { Option } = Select;
 export default class Search extends PureComponent {
@@ -9,6 +9,7 @@ export default class Search extends PureComponent {
         byStyle: false,
         selectedMake: undefined,
         selectedModel: undefined,
+        selectedBodyStyle: undefined,
     }
 
     updateSelectedOption = (value, key) => this.setState({ [key]: value });
@@ -27,7 +28,7 @@ export default class Search extends PureComponent {
     }
 
     render() {
-        const { byMake, byStyle, selectedMake, selectedModel } = this.state;
+        const { byMake, byStyle, selectedMake, selectedModel, selectedBodyStyle } = this.state;
         const models = selectedMake && makesAndModels.find(record => record.make === selectedMake).models;
         return (
             <React.Fragment>
@@ -62,7 +63,7 @@ export default class Search extends PureComponent {
                             </Select>
                             <Select
                                 className="search__selector"
-                                placeholder="Select a Model"
+                                placeholder="Select a Body Style"
                                 value={selectedModel}
                                 onChange={(value => this.updateSelectedOption(value, "selectedModel"))}
                             >
@@ -77,12 +78,12 @@ export default class Search extends PureComponent {
                         <Select
                             className="search__selector"
                             placeholder="Select a Make"
-                            value={selectedMake}
-                            onChange={(value => this.updateSelectedOption(value, "selectedMake"))}
+                            value={selectedBodyStyle}
+                            onChange={(value => this.updateSelectedOption(value, "selectedBodyStyle"))}
                         >
-                            {makesAndModels.map(item => (
-                                <Option key={item.make} value={item.make}>
-                                    {item.make}
+                            {bodyStyles.map(item => (
+                                <Option key={item} value={item}>
+                                    {item}
                                 </Option>
                             ))}
                         </Select>
