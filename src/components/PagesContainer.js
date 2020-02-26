@@ -24,7 +24,7 @@ export default class PagesContainer extends PureComponent {
                     <TabPane tab="Cars" key="cars">
                         Cars
                     </TabPane>
-                    <TabPane tab="Company" key="company">
+                    <TabPane tab="Company" key="company" >
                         <Company/>
                     </TabPane>
                     <TabPane tab="Order" key="order">

@@ -3,7 +3,7 @@
 }
 .search__tab {
     background: @background2;
-    padding: 2px 4px;
+    padding: 2px 10px;
 }
 .search__tab-active {
     background: @gray;
@@ -23,4 +23,12 @@
 .search__selector {
     width: 100%;
     margin: 0 0 10px 0;
+}
+
+@media (min-width: 768px){
+    .search__selector-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+    }
 }

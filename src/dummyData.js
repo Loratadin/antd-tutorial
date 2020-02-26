@@ -20,4 +20,6 @@ export const inventory = [
         exteriorColor: "red",
         imageUrl: "https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     },
-]
+];
+
+export const bodyStyles = ["Convertible", "Coupe", "HatchBack", "Minivan", "Sedan", "SUV"];

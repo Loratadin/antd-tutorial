@@ -48,7 +48,7 @@ export default class Search extends PureComponent {
                 </div>
                 <div className="search__body">
                     {byMake ? (
-                        <>
+                        <div className="search__selector-wrap">
                             <Select
                                 className="search__selector"
                                 placeholder="Select a Make"
@@ -63,7 +63,7 @@ export default class Search extends PureComponent {
                             </Select>
                             <Select
                                 className="search__selector"
-                                placeholder="Select a Body Style"
+                                placeholder="Select a Model"
                                 value={selectedModel}
                                 onChange={(value => this.updateSelectedOption(value, "selectedModel"))}
                             >
@@ -73,20 +73,22 @@ export default class Search extends PureComponent {
                                     </Option>
                                 ))}
                             </Select>
-                        </>
+                        </div>
                     ) : (
-                        <Select
-                            className="search__selector"
-                            placeholder="Select a Make"
-                            value={selectedBodyStyle}
-                            onChange={(value => this.updateSelectedOption(value, "selectedBodyStyle"))}
-                        >
-                            {bodyStyles.map(item => (
-                                <Option key={item} value={item}>
-                                    {item}
-                                </Option>
-                            ))}
-                        </Select>
+                        <div className="search__selector-wrap">
+                            <Select
+                                className="search__selector"
+                                placeholder="Select a Body Style"
+                                value={selectedBodyStyle}
+                                onChange={(value => this.updateSelectedOption(value, "selectedBodyStyle"))}
+                            >
+                                {bodyStyles.map(item => (
+                                    <Option key={item} value={item}>
+                                        {item}
+                                    </Option>
+                                ))}
+                            </Select>
+                        </div>
                     )}
                     <Button type="primary" onClick={this.onSearchClick}>Search</Button>
                     <Button className="search__see-all-button" onClick={this.onSeeAllClick}>See All Cars</Button>
