@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Tabs } from 'antd';
-import Header from '../components/Header';
-import Home from '../components/Home';
-import Company from '../components/Company';
+import Header from './Header';
+import Home from './Home';
+import Cars from "./Cars";
+import Company from './Company';
 
 const { TabPane } = Tabs;
 export default class PagesContainer extends PureComponent {
@@ -22,7 +23,7 @@ export default class PagesContainer extends PureComponent {
                         <Home changeTab={this.handleTabChange}/>
                     </TabPane>
                     <TabPane tab="Cars" key="cars">
-                        Cars
+                        <Cars/>
                     </TabPane>
                     <TabPane tab="Company" key="company" >
                         <Company/>
