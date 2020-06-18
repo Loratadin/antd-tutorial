@@ -3,11 +3,13 @@ import { Icon } from "antd";
 
 export default class CarDetails extends PureComponent {
     render() {
-        const { car } = this.props;
+        const { car, favorites } = this.props;
+        const isFavorite = favorites.includes(car);
         return (
             <>
-                <div key={car} className="details__top">
-                    <div className="details-top__save"><Icon className="details-top__icon" type="heart"/> Save</div>
+                <div onClick={() => this.props.saveCarToFavorites(car.key)} className="details__top">
+                    <Icon className="details-top__icon" type="heart" style={{color: isFavorite ? "red" : "white"}}/>
+                    <div className="details-top__save">{isFavorite ? "Saved" : "Save"}</div>
                 </div>
                 <div className="details__vehicle">{car.year} {car.make} {car.model}</div>
                 <div className="details-top__price">MSRP: {car.msrp}</div>

@@ -15,7 +15,11 @@ export default class Cars extends PureComponent {
                         {inventory && inventory.map(car => (
                             <div key={car} className="cars-portfolio__record">
                                 <div className="cars-portfolio__record-info-wrap">
-                                    <CarDetails car={car}/>
+                                    <CarDetails
+                                        car={car}
+                                        saveCarToFavorites={this.props.saveCarToFavorites}
+                                        favorites={this.props.favorites}
+                                    />
                                 </div>
                                 <div className="cars-portfolio__record-image-wrap">
                                     <img src={car.imageUrl} className="cars-portfolio__image" alt="car"/>
