@@ -91,7 +91,7 @@ export default class Search extends PureComponent {
                         </div>
                     )}
                     <Button type="primary" onClick={this.onSearchClick}>Search</Button>
-                    <Button className="search__see-all-button" onClick={this.onSeeAllClick}>See All Cars</Button>
+                    <Button className="search__see-all-button" onClick={this.onSeeAllClick} data-testid="see-all">See All Cars</Button>
                 </div>
             </React.Fragment>
         );
