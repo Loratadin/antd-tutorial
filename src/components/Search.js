@@ -31,7 +31,7 @@ export default class Search extends PureComponent {
         const { byMake, byStyle, selectedMake, selectedModel, selectedBodyStyle } = this.state;
         const models = selectedMake && makesAndModels.find(record => record.make === selectedMake).models;
         return (
-            <React.Fragment>
+            <div data-testid="search">
                 <div className="search__tabs">
                     <div
                         className={`search__tab ${byMake && "search__tab-active"}`}
@@ -93,7 +93,7 @@ export default class Search extends PureComponent {
                     <Button type="primary" onClick={this.onSearchClick}>Search</Button>
                     <Button className="search__see-all-button" onClick={this.onSeeAllClick} data-testid="see-all">See All Cars</Button>
                 </div>
-            </React.Fragment>
+            </div>
         );
     }
 }
