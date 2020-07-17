@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { formatCurrency } from "../utilities";
 import { Icon } from "antd";
 
 export default class CarDetails extends PureComponent {
@@ -12,7 +13,7 @@ export default class CarDetails extends PureComponent {
                     <div className="details-top__save">{isFavorite ? "Saved" : "Save"}</div>
                 </div>
                 <div className="details__vehicle">{car.year} {car.make} {car.model}</div>
-                <div className="details-top__price">MSRP: {car.msrp}</div>
+                <div className="details-top__price">MSRP: {formatCurrency(car.msrp)}</div>
                 <div className="details__color">Exterior color: {car.exteriorColor}</div>
             </>
         )
