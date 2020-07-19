@@ -1,0 +1,39 @@
+.order__container {
+    position: relative;
+    height: 85vh;
+}
+.order__background-image-wrap {
+    position: fixed;
+    width: 90%;
+    height: 85vh;
+    z-index: 1;
+}
+.order__background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.order__wrap {
+    position: absolute;
+    margin: 0 5vw;
+    padding-top: 20px;
+    width: 80vw;
+    height: 70vh;
+    overflow-y: scroll;
+    top: 8vh;
+    left: 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    z-index: 2;
+}
+
+@media (min-width: 700px) {
+    .order__background-image-wrap {
+        width: 80%;
+    }
+    .order__wrap {
+        margin: 0 10vw;
+        width: 60vw;
+    }
+}

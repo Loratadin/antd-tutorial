@@ -4,6 +4,7 @@ import Header from './Header';
 import Home from './Home';
 import Cars from './Cars';
 import Company from './Company';
+import Order from './Order';
 import { inventory } from '../dummyData';
 const { TabPane } = Tabs;
 export default class PagesContainer extends PureComponent {
@@ -39,7 +40,7 @@ export default class PagesContainer extends PureComponent {
                         <Company/>
                     </TabPane>
                     <TabPane tab="Order" key="order">
-                        Order
+                        <Order/>
                     </TabPane>
                 </Tabs>
             </div>
