@@ -18,6 +18,7 @@ export default class Cars extends PureComponent {
                                     <CarDetails
                                         car={car}
                                         saveCarToFavorites={this.props.saveCarToFavorites}
+                                        addCarToOrder={this.props.addCarToOrder}
                                         favorites={this.props.favorites}
                                     />
                                 </div>

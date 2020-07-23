@@ -11,6 +11,7 @@ export default class PagesContainer extends PureComponent {
     state = {
         activeKey: "home",
         favorites: [],
+        carsInOrder: [],
     }
 
     handleTabChange = key => this.setState({activeKey: key})
@@ -24,8 +25,14 @@ export default class PagesContainer extends PureComponent {
             this.setState({ favorites: [...this.state.favorites, selectedCar] });
         }
     }
+
+    handleAddCarToOrder = id => {
+        const selectedCar = inventory.find(car => car.key === id);
+        this.setState({ carsInOrder: [...this.state.carsInOrder, selectedCar] });
+    }
+
     render() {
-        const { activeKey, favorites } = this.state;
+        const { activeKey, favorites, carsInOrder } = this.state;
         return (
             <div className="pages-container">
                 <Header />
@@ -34,13 +41,17 @@ export default class PagesContainer extends PureComponent {
                         <Home changeTab={this.handleTabChange}/>
                     </TabPane>
                     <TabPane tab="Cars" key="cars">
-                        <Cars saveCarToFavorites={this.handleSaveCarToFavorites} favorites={favorites} />
+                        <Cars
+                            saveCarToFavorites={this.handleSaveCarToFavorites}
+                            addCarToOrder={this.handleAddCarToOrder}
+                            favorites={favorites}
+                        />
                     </TabPane>
                     <TabPane tab="Company" key="company" >
                         <Company/>
                     </TabPane>
                     <TabPane tab="Order" key="order">
-                        <Order/>
+                        <Order carsInOrder={carsInOrder} favorites={favorites}/>
                     </TabPane>
                 </Tabs>
             </div>

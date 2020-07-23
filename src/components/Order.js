@@ -3,6 +3,7 @@ import { Input } from "antd";
 
 export default class Order extends PureComponent {
     render() {
+        const { favorites, carsInOrder } = this.props;
         return (
             <div className="order__container">
                 <div className="order__background-image-wrap">
@@ -10,6 +11,8 @@ export default class Order extends PureComponent {
                 </div>
                 <div className="order__wrap">
                     <Input />
+                    <div>Favorites: {favorites.length}</div>
+                    <div>Reserved: {carsInOrder.length}</div>
                 </div>
             </div>
         )

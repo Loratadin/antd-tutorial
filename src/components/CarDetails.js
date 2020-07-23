@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { formatCurrency } from "../utilities";
-import { Icon } from "antd";
+import { Icon, Button } from "antd";
 
 export default class CarDetails extends PureComponent {
     render() {
@@ -15,6 +15,7 @@ export default class CarDetails extends PureComponent {
                 <div className="details__vehicle">{car.year} {car.make} {car.model}</div>
                 <div className="details-top__price">MSRP: {formatCurrency(car.msrp)}</div>
                 <div className="details__color">Exterior color: {car.exteriorColor}</div>
+                <Button className="details__reservation-button" onClick={() => this.props.addCarToOrder(car.key)}>Make Reservation</Button>
             </>
         )
     }
