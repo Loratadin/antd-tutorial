@@ -20,6 +20,7 @@ export default class Cars extends PureComponent {
                                         saveCarToFavorites={this.props.saveCarToFavorites}
                                         addCarToOrder={this.props.addCarToOrder}
                                         favorites={this.props.favorites}
+                                        carsInOrder={this.props.carsInOrder}
                                     />
                                 </div>
                                 <div className="cars-portfolio__record-image-wrap">

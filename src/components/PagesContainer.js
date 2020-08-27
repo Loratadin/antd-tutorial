@@ -45,6 +45,7 @@ export default class PagesContainer extends PureComponent {
                             saveCarToFavorites={this.handleSaveCarToFavorites}
                             addCarToOrder={this.handleAddCarToOrder}
                             favorites={favorites}
+                            carsInOrder={carsInOrder}
                         />
                     </TabPane>
                     <TabPane tab="Company" key="company" >
