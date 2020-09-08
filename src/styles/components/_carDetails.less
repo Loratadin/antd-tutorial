@@ -43,4 +43,14 @@
     &:focus {
         background: transparent;
     }
+    &:disabled {
+        background: transparent;
+        color: @primary;
+        border-color: @primary;
+        &:hover {
+            background: transparent;
+            color: darken(@primary, 10%);
+            border-color: darken(@primary, 10%);
+        }
+    }
 }

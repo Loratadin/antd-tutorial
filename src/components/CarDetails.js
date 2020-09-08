@@ -18,7 +18,8 @@ export default class CarDetails extends PureComponent {
                 <div className="details__color">Exterior color: {car.exteriorColor}</div>
                 <Button
                     className={isReserved ? "details__reserved-button" : "details__reservation-button"}
-                    onClick={() => this.props.addCarToOrder(car.key)}
+                    onClick={() => this.props.toggleReservationModal(car)}
+                    disabled={isReserved}
                 >
                     {isReserved ? "Reserved" : "Make Reservation"}
                 </Button>
