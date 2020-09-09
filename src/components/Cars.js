@@ -17,6 +17,7 @@ export default class Cars extends PureComponent {
     }
 
     render() {
+        const { carsInOrder, addCarToOrder, saveCarToFavorites, favorites } = this.props;
         const { isReservationModalVisible, reservationCarDetails } = this.state;
         return (
             <div className="cars__container">
@@ -31,10 +32,9 @@ export default class Cars extends PureComponent {
                                 <div className="cars-portfolio__record-info-wrap">
                                     <CarDetails
                                         car={car}
-                                        saveCarToFavorites={this.props.saveCarToFavorites}
-                                        addCarToOrder={this.props.addCarToOrder}
-                                        favorites={this.props.favorites}
-                                        carsInOrder={this.props.carsInOrder}
+                                        saveCarToFavorites={saveCarToFavorites}
+                                        favorites={favorites}
+                                        carsInOrder={carsInOrder}
                                         toggleReservationModal={this.toggleReservationModal}
                                     />
                                 </div>
@@ -49,6 +49,7 @@ export default class Cars extends PureComponent {
                             reservationCarDetails={reservationCarDetails}
                             toggleReservationModal={this.toggleReservationModal}
                             isReservationModalVisible={isReservationModalVisible}
+                            addCarToOrder={addCarToOrder}
                         />
                     )}
                 </div>
