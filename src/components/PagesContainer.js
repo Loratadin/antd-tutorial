@@ -26,9 +26,8 @@ export default class PagesContainer extends PureComponent {
         }
     }
 
-    handleAddCarToOrder = id => {
-        const selectedCar = inventory.find(car => car.key === id);
-        this.setState({ carsInOrder: [...this.state.carsInOrder, selectedCar] });
+    handleAddCarToOrder = (car, dates, formattedDates) => {
+        this.setState({ carsInOrder: [...this.state.carsInOrder, car] });
     }
 
     render() {

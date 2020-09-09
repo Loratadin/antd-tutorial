@@ -27,8 +27,8 @@ export default class Cars extends PureComponent {
                 <div className="cars__portfolio-wrap">
                     <div className="cars-portfolio__filters">Filters</div>
                     <div className="cars-portfolio__results">
-                        {inventory && inventory.map(car => (
-                            <div key={car} className="cars-portfolio__record">
+                        {inventory && inventory.map((car, idx) => (
+                            <div key={`car-${idx}`} className="cars-portfolio__record">
                                 <div className="cars-portfolio__record-info-wrap">
                                     <CarDetails
                                         car={car}
