@@ -11,24 +11,6 @@ export const makesAndModels = [
 
 export const inventory = [
     {
-        key: 8,
-        make: "BMW",
-        model: "M4",
-        exteriorColor: "white",
-        year: 2020,
-        imageUrl: "https://images.pexels.com/photos/794435/pexels-photo-794435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        msrp: 78799,
-    },
-    {
-        key: 9,
-        make: "Audi",
-        model: "A5",
-        exteriorColor: "blue",
-        year: 2019,
-        imageUrl: "https://images.pexels.com/photos/244212/pexels-photo-244212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        msrp: 52240,
-    },
-    {
         key: 10,
         make: "Audi",
         model: "TT RS",
@@ -67,6 +49,24 @@ export const inventory = [
         imageUrl: "https://images.pexels.com/photos/977003/pexels-photo-977003.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         bodyStyle: "Convertible",
         msrp: 154590,
+    },
+    {
+        key: 8,
+        make: "BMW",
+        model: "M4",
+        exteriorColor: "white",
+        year: 2020,
+        imageUrl: "https://images.pexels.com/photos/794435/pexels-photo-794435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        msrp: 78799,
+    },
+    {
+        key: 9,
+        make: "Audi",
+        model: "A5",
+        exteriorColor: "blue",
+        year: 2019,
+        imageUrl: "https://images.pexels.com/photos/244212/pexels-photo-244212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        msrp: 52240,
     },
     {
         key: 4,

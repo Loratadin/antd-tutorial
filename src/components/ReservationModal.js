@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Modal, Button, DatePicker, message } from "antd";
+import moment from "moment";
 
 const { RangePicker } = DatePicker;
 export default class ReservationModal extends PureComponent {
@@ -18,6 +19,10 @@ export default class ReservationModal extends PureComponent {
         this.setState({reservationDateAndTime: value, formattedReservationDateAndTime: dateString})
     }
 
+    disablePastDates = (current) => {
+        return current && current < moment().endOf("day");
+      }
+
     render() {
         const { reservationCarDetails, toggleReservationModal, isReservationModalVisible } = this.props;
         return (
@@ -34,6 +39,7 @@ export default class ReservationModal extends PureComponent {
                     showTime={{ format: 'hh:mma' }}
                     format="YYYY-MM-DD hh:mma"
                     onChange={this.onDateSelection}
+                    disabledDate={current => this.disablePastDates(current)}
                 />
                 <div className="reserv_buttons-wrap">
                     <Button onClick={toggleReservationModal}>Cancel</Button>
