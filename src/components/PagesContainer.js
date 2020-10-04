@@ -51,7 +51,7 @@ export default class PagesContainer extends PureComponent {
                         <Company/>
                     </TabPane>
                     <TabPane tab="Order" key="order">
-                        <Order carsInOrder={carsInOrder} favorites={favorites}/>
+                        <Order carsInOrder={carsInOrder}  favorites={favorites}/>
                     </TabPane>
                 </Tabs>
             </div>

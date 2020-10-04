@@ -26,6 +26,19 @@
     z-index: 2;
     color: white;
 }
+.order__vehicle {
+    font-size: 20px;
+    font-weight: 700;
+}
+.order__favorites-link {
+    color: @primary;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+        color: lighten(@primary, 10%);
+    }
+}
 
 @media (min-width: 700px) {
     .order__background-image-wrap {

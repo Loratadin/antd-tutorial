@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
-import { Input } from "antd";
+import { formatCurrency } from "../utilities";
+import { Button } from "antd";
 
 export default class Order extends PureComponent {
     render() {
@@ -10,9 +11,17 @@ export default class Order extends PureComponent {
                     <img src="./assets/order-bg.jpg" className="order__background-image" alt="car"/>
                 </div>
                 <div className="order__wrap">
-                    <Input />
-                    <div>Favorites: {favorites.length}</div>
-                    <div>Reserved: {carsInOrder.length}</div>
+                    {carsInOrder && carsInOrder.map((car, idx) => (
+                        <div key={`order-${idx}`} className="order__car-reserved">
+                            <div className="order__vehicle">{car.year} {car.make} {car.model}</div>
+                            <div className="order__price">MSRP: {formatCurrency(car.msrp)}</div>
+                            <div className="order__color">Exterior color: {car.exteriorColor}</div>
+                            <Button>
+                                Checkout
+                            </Button>
+                        </div>
+                    ))}
+                    {favorites && <div className="order__favorites-link">View Favorites</div>}
                 </div>
             </div>
         )
