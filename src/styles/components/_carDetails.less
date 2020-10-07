@@ -19,7 +19,7 @@
     font-weight: 700;
 }
 .details__reservation-button {
-    margin: 20px 0;
+    margin: 20px 0 5px 0;
     background: transparent;
     color: white;
     letter-spacing: 1px;
@@ -32,7 +32,7 @@
     }
 }
 .details__reserved-button {
-    margin: 20px 0;
+    margin: 20px 0 5px 0;
     background: rgba(255, 255, 255, 0.2);
     color: @primary;
     letter-spacing: 1px;
@@ -52,5 +52,12 @@
             color: darken(@primary, 10%);
             border-color: darken(@primary, 10%);
         }
+    }
+}
+
+@media (min-width: 700px) {
+    .details__reservation-button,
+    .details__reserved-button {
+        margin: 20px 0;
     }
 }
