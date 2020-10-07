@@ -40,7 +40,7 @@ export default class Cars extends PureComponent {
                                 </div>
                                 <div className="cars-portfolio__record-image-wrap">
                                     <img src={car.imageUrl} className="cars-portfolio__image" alt="car"/>
-                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>
