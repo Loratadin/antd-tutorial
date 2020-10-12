@@ -24,6 +24,30 @@
     left: 0;
     display: block;
     z-index: 2;
+    scrollbar-face-color: #367CD2;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-3dlight-color: #FFFFFF;
+    scrollbar-darkshadow-color: #FFFFFF;
+    scrollbar-track-color: #FFFFFF;
+    scrollbar-arrow-color: #FFFFFF;
+}
+/* Scrollbar */
+.cars__portfolio-wrap::-webkit-scrollbar {
+    width: 8px;
+}
+/* Track */
+.cars__portfolio-wrap::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+/* Handle */
+.cars__portfolio-wrap::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: @primary;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 .cars-portfolio__record {
     display: grid;
