@@ -5,3 +5,7 @@ export function formatCurrency(amount) {
     const rounded = !isNaN(parseInt(amount, 10)) ? Math.ceil(amount) : amount;
     return currencyFormatter.format(rounded, currencyFormat);
 }
+
+export const sufficientArray  = array => {
+    return Array.isArray(array) && array.length > 0;
+  };

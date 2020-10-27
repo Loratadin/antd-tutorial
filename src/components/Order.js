@@ -1,10 +1,17 @@
 import React, { PureComponent } from 'react';
-import { formatCurrency } from "../utilities";
+import { formatCurrency, sufficientArray } from "../utilities";
 import { Button } from "antd";
 
 export default class Order extends PureComponent {
+    state = {
+        favoritesVisible: false,
+    }
+
+    toggleFavorites = () => this.setState({favoritesVisible: !this.state.favoritesVisible})
+
     render() {
         const { favorites, carsInOrder } = this.props;
+        const { favoritesVisible } = this.state;
         return (
             <div className="order__container">
                 <div className="order__background-image-wrap">
@@ -24,7 +31,10 @@ export default class Order extends PureComponent {
                             </Button>
                         </div>
                     ))}
-                    {favorites && <div className="order__favorites-link">View Favorites</div>}
+                    {sufficientArray(favorites) && <div onClick={this.toggleFavorites} className="order__favorites-link">{favoritesVisible ? "Hide Favorites" : "View Favorites"}</div>}
+                    {sufficientArray(favorites) && favoritesVisible && (
+                        <div>fav</div>
+                    )}
                 </div>
             </div>
         )
