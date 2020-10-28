@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { formatCurrency, sufficientArray } from "../utilities";
+import CarDetails from "./CarDetails";
 import { Button } from "antd";
 
 export default class Order extends PureComponent {
@@ -33,7 +34,24 @@ export default class Order extends PureComponent {
                     ))}
                     {sufficientArray(favorites) && <div onClick={this.toggleFavorites} className="order__favorites-link">{favoritesVisible ? "Hide Favorites" : "View Favorites"}</div>}
                     {sufficientArray(favorites) && favoritesVisible && (
-                        <div>fav</div>
+                        <div className="cars-portfolio__results">
+                        {favorites.map((car, idx) => (
+                            <div key={`car-${idx}`} className="cars-portfolio__record">
+                                <div className="cars-portfolio__record-info-wrap">
+                                    <CarDetails
+                                        car={car}
+                                        removeFromFavorites={this.props.removeFromFavorites}
+                                        favorites={favorites}
+                                        carsInOrder={carsInOrder}
+                                        toggleReservationModal={this.props.toggleReservationModal}
+                                    />
+                                </div>
+                                <div className="cars-portfolio__record-image-wrap">
+                                    <img src={car.imageUrl} className="cars-portfolio__image" alt="car"/>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                     )}
                 </div>
             </div>

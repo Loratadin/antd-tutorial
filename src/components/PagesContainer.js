@@ -12,6 +12,8 @@ export default class PagesContainer extends PureComponent {
         activeKey: "home",
         favorites: [],
         carsInOrder: [],
+        isReservationModalVisible: false,
+        reservationCarDetails: undefined,
     }
 
     handleTabChange = key => this.setState({activeKey: key})
@@ -26,12 +28,21 @@ export default class PagesContainer extends PureComponent {
         }
     }
 
+    handleRemoveFromFavorites = selectedCar => this.setState({ favorites: this.state.favorites.filter(car => car !== selectedCar) });
+
     handleAddCarToOrder = (car, dates, formattedDates) => {
         this.setState({ carsInOrder: [...this.state.carsInOrder, car] });
     }
 
+    toggleReservationModal = ( car={} ) => {
+        this.setState({
+            reservationCarDetails: this.state.reservationCarDetails ? undefined : car,
+            isReservationModalVisible: !this.state.isReservationModalVisible,
+        })
+    }
+
     render() {
-        const { activeKey, favorites, carsInOrder } = this.state;
+        const { activeKey, favorites, carsInOrder, reservationCarDetails, isReservationModalVisible } = this.state;
         return (
             <div className="pages-container">
                 <Header />
@@ -45,13 +56,23 @@ export default class PagesContainer extends PureComponent {
                             addCarToOrder={this.handleAddCarToOrder}
                             favorites={favorites}
                             carsInOrder={carsInOrder}
+                            reservationCarDetails={reservationCarDetails}
+                            isReservationModalVisible={isReservationModalVisible}
+                            toggleReservationModal={this.toggleReservationModal}
                         />
                     </TabPane>
                     <TabPane tab="Company" key="company" >
                         <Company/>
                     </TabPane>
                     <TabPane tab="Order" key="order">
-                        <Order carsInOrder={carsInOrder}  favorites={favorites}/>
+                        <Order
+                            carsInOrder={carsInOrder}
+                            favorites={favorites}
+                            removeFromFavorites={this.handleRemoveFromFavorites}
+                            reservationCarDetails={reservationCarDetails}
+                            isReservationModalVisible={isReservationModalVisible}
+                            toggleReservationModal={this.toggleReservationModal}
+                        />
                     </TabPane>
                 </Tabs>
             </div>

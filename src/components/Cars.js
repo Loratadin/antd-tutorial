@@ -4,18 +4,6 @@ import ReservationModal from "./ReservationModal";
 import { inventory } from "../dummyData";
 
 export default class Cars extends PureComponent {
-    state = {
-        isReservationModalVisible: false,
-        reservationCarDetails: undefined,
-    }
-
-    toggleReservationModal = ( car={} ) => {
-        this.setState({
-            reservationCarDetails: this.state.reservationCarDetails ? undefined : car,
-            isReservationModalVisible: !this.state.isReservationModalVisible,
-        })
-    }
-
     render() {
         const { carsInOrder, addCarToOrder, saveCarToFavorites, favorites } = this.props;
         const { isReservationModalVisible, reservationCarDetails } = this.state;
@@ -35,7 +23,7 @@ export default class Cars extends PureComponent {
                                         saveCarToFavorites={saveCarToFavorites}
                                         favorites={favorites}
                                         carsInOrder={carsInOrder}
-                                        toggleReservationModal={this.toggleReservationModal}
+                                        toggleReservationModal={this.props.toggleReservationModal}
                                     />
                                 </div>
                                 <div className="cars-portfolio__record-image-wrap">
@@ -47,7 +35,7 @@ export default class Cars extends PureComponent {
                     {isReservationModalVisible && (
                         <ReservationModal
                             reservationCarDetails={reservationCarDetails}
-                            toggleReservationModal={this.toggleReservationModal}
+                            toggleReservationModal={this.props.toggleReservationModal}
                             isReservationModalVisible={isReservationModalVisible}
                             addCarToOrder={addCarToOrder}
                         />
