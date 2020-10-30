@@ -28,8 +28,6 @@ export default class PagesContainer extends PureComponent {
         }
     }
 
-    handleRemoveFromFavorites = selectedCar => this.setState({ favorites: this.state.favorites.filter(car => car !== selectedCar) });
-
     handleAddCarToOrder = (car, dates, formattedDates) => {
         this.setState({ carsInOrder: [...this.state.carsInOrder, car] });
     }
@@ -68,7 +66,7 @@ export default class PagesContainer extends PureComponent {
                         <Order
                             carsInOrder={carsInOrder}
                             favorites={favorites}
-                            removeFromFavorites={this.handleRemoveFromFavorites}
+                            saveCarToFavorites={this.handleSaveCarToFavorites}
                             reservationCarDetails={reservationCarDetails}
                             isReservationModalVisible={isReservationModalVisible}
                             toggleReservationModal={this.toggleReservationModal}

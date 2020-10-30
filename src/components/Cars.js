@@ -5,8 +5,15 @@ import { inventory } from "../dummyData";
 
 export default class Cars extends PureComponent {
     render() {
-        const { carsInOrder, addCarToOrder, saveCarToFavorites, favorites } = this.props;
-        const { isReservationModalVisible, reservationCarDetails } = this.state;
+        const {
+            carsInOrder,
+            addCarToOrder,
+            saveCarToFavorites,
+            favorites,
+            isReservationModalVisible,
+            reservationCarDetails,
+            toggleReservationModal,
+        } = this.props;
         return (
             <div className="cars__container">
                 <div className="cars__background-image-wrap">
@@ -23,7 +30,7 @@ export default class Cars extends PureComponent {
                                         saveCarToFavorites={saveCarToFavorites}
                                         favorites={favorites}
                                         carsInOrder={carsInOrder}
-                                        toggleReservationModal={this.props.toggleReservationModal}
+                                        toggleReservationModal={toggleReservationModal}
                                     />
                                 </div>
                                 <div className="cars-portfolio__record-image-wrap">
@@ -35,7 +42,7 @@ export default class Cars extends PureComponent {
                     {isReservationModalVisible && (
                         <ReservationModal
                             reservationCarDetails={reservationCarDetails}
-                            toggleReservationModal={this.props.toggleReservationModal}
+                            toggleReservationModal={toggleReservationModal}
                             isReservationModalVisible={isReservationModalVisible}
                             addCarToOrder={addCarToOrder}
                         />

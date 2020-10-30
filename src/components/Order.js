@@ -11,7 +11,7 @@ export default class Order extends PureComponent {
     toggleFavorites = () => this.setState({favoritesVisible: !this.state.favoritesVisible})
 
     render() {
-        const { favorites, carsInOrder } = this.props;
+        const { favorites, carsInOrder, saveCarToFavorites } = this.props;
         const { favoritesVisible } = this.state;
         return (
             <div className="order__container">
@@ -40,7 +40,7 @@ export default class Order extends PureComponent {
                                 <div className="cars-portfolio__record-info-wrap">
                                     <CarDetails
                                         car={car}
-                                        removeFromFavorites={this.props.removeFromFavorites}
+                                        saveCarToFavorites={saveCarToFavorites}
                                         favorites={favorites}
                                         carsInOrder={carsInOrder}
                                         toggleReservationModal={this.props.toggleReservationModal}
