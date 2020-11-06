@@ -7,6 +7,9 @@
     .ant-modal-close-x {
         color: @light-gray;
     }
+    .ant-calendar-picker {
+        width: 300px !important;
+    }
 }
 .reserv_buttons-wrap {
     display: flex;
@@ -23,4 +26,12 @@
     color: @light-gray;
     font-size: 15px;
     margin: 20px 0 10px 0;
+}
+
+@media (min-width: 700px) {
+    .reservation_modal {
+        .ant-calendar-picker {
+            width: 350px;
+        }
+    }
 }
