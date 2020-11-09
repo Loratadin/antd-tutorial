@@ -13,13 +13,14 @@ export default class Order extends PureComponent {
     render() {
         const { favorites, carsInOrder, saveCarToFavorites } = this.props;
         const { favoritesVisible } = this.state;
+        const emptyCart = !sufficientArray(carsInOrder);
         return (
             <div className="order__container">
                 <div className="order__background-image-wrap">
                     <img src="./assets/order-bg.jpg" className="order__background-image" alt="car"/>
                 </div>
                 <div className="order__wrap">
-                    {carsInOrder && carsInOrder.map((car, idx) => (
+                    {sufficientArray(carsInOrder) && carsInOrder.map((car, idx) => (
                         <div key={`order-${idx}`} className="order__car-reserved">
                             <div className="order__image-wrap">
                                 <img src={car.imageUrl} className="order__image" alt="car"/>
@@ -52,6 +53,12 @@ export default class Order extends PureComponent {
                             </div>
                         ))}
                     </div>
+                    )}
+                    {emptyCart && (
+                        <div className="order__note-container">
+                            <div className="order__note">You don't have any reservations yet.</div>
+                            <Button onClick={() => this.props.changeTab("cars")} className="order__redirect-button" icon="check">Find The Right Car</Button>
+                        </div>
                     )}
                 </div>
             </div>

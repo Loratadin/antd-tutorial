@@ -82,6 +82,27 @@
     color: @primary;
     margin: 30px 0 50px 0;
 }
+.order__note-container {
+    text-align: center;
+    padding-top: 40px;
+}
+.order__note {
+    font-size: 16px;
+}
+.order__redirect-button {
+    margin-top: 20px;
+    background: transparent;
+    color: @primary;
+    border-color: @primary;
+    letter-spacing: 1px;
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    &:active,
+    &:focus {
+        background: transparent;
+    }
+}
 
 @media (min-width: 700px) {
     .order__background-image-wrap {
@@ -90,5 +111,8 @@
     .order__wrap {
         margin: 0 10vw;
         width: 60vw;
+    }
+    .order__note {
+        font-size: 20px;
     }
 }

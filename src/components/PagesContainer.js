@@ -70,6 +70,7 @@ export default class PagesContainer extends PureComponent {
                             reservationCarDetails={reservationCarDetails}
                             isReservationModalVisible={isReservationModalVisible}
                             toggleReservationModal={this.toggleReservationModal}
+                            changeTab={this.handleTabChange}
                         />
                     </TabPane>
                 </Tabs>
