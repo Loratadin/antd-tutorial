@@ -37,7 +37,7 @@ export default class ReservationModal extends PureComponent {
                 <div className="reserv_message">Please choose dates and time of reservation.</div>
                 <RangePicker
                     showTime={{ format: 'hh:mma' }}
-                    format="YYYY-MM-DD hh:mma"
+                    format="MMM Do HH:MM"
                     onChange={this.onDateSelection}
                     disabledDate={current => this.disablePastDates(current)}
                 />
